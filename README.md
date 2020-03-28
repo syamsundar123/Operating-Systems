@@ -12,6 +12,49 @@
     Before a reader/writer attempts to access the shared variable it should wait some random amount of time 
         Note: This will help ensure that reads and writes do not occur all at once 
     Use pthreads, mutexes, and condition variables to synchronize access to the shared variable.
+    
+    
+    PROBLEM DESCRIPTION:
+Thread: Thread is a single sequence stream within a process.
+ Threads have same properties as of the process so they are called as light weight processes.        Threads are executed one after another but gives the illusion as if they are executing in parallel. Each thread has different states. 
+Each thread has
+1.	A program counter
+2.	A register set
+3.	A stack space
+Threads are not independent of each other as they share the code, data, OS resources etc.
+Readers-Writers Problem (Readers Priority Over Writers)
+Consider a situation where we have a file shared between many people.
+•	If one of the people tries editing the file, no other person should be reading or writing at the same time, otherwise changes will not be visible to him/her.
+•	However,if some person is reading the file, then others may read it at the same time.
+Precisely in OS we call this situation as the Readers-Writers Problem
+Problem parameters:
+
+
+
+•	One set of data is shared among a number of processes
+•	Once a writer is ready, it performs its write. Only one writer may write at a time
+•	If a process is writing, no other process can read it
+•	If at least one reader is reading, no other process can write
+•	Readers may not write and only read
+
+
+The readers-writers problem is used to manage synchronization 
+So that there are no problems with the object data.
+ For example - If two readers access the object at the same time there is no problem.
+ However, if two writers or a reader and writer access the object at the same time, there may be problems.
+To solve this situation, a writer should get exclusive access to an object i.e. when a writer is accessing the object, no reader or writer may access it. 
+However, multiple readers can access the object at the same time.
+
+Solution when Reader has the Priority over Writer
+
+Here priority means, no reader should wait if the share is currently opened for reading.
+Three variables are used: mutex, wrt, readcount to implement solution.
+1.	semaphore mutex, wrt; // semaphore mutex is used to ensure mutual exclusion when readcount is updated i.e. when any reader enters or exit from the critical section and semaphore wrt is used by both readers and writers
+2.	int readcount;  //    readcount tells the number of processes performing read in the critical section, initially 0
+Functions for sempahore :
+– wait() : decrements the semaphore value.
+– signal() : increments the semaphore value.
+
 TESTCASES:
 
 TESTCASE 1:
