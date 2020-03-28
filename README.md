@@ -95,6 +95,7 @@ R1 is reading
 R1 is reading shared value = 12
 R1 is reading shared value = 12
 Number of readers = 0
+
 =======================================================================
 W1 is waiting for Random Time = 6
 Enter the number of times W1 wants to write:
@@ -103,6 +104,7 @@ W1 is Writing...
 Enter the value 1 to write
 3
 UPDATED SHARED VARIABLE  = 15
+
 ========================================================================
 =======================================================================
 W1 is waiting for Random Time = 2
