@@ -18,7 +18,7 @@ void *writer(void *a)
         printf("W%d is waiting for Random Time = %d\n", *d, random_time);
         sleep(random_time);
         int No_of_times;
-        printf("Enter the number of times W%d wants to write:\n", *d);
+        printf("Enter the no. of times W%d wants to write:\n", *d);
         scanf("%d",&No_of_times);
         printf("W%d is Writing...\n", *d);
         for(int j = 1; j<= No_of_times;j++)
