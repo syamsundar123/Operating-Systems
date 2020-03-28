@@ -31,7 +31,7 @@ R2
 R3
 R4
 
-=========================================================================
+
 Enter the number of  writers:5
 W0
 W1
@@ -39,11 +39,11 @@ W2
 W3
 W4
 
-=========================================================================
+
 Thread Creating...!
 
-=========================================================================
-=======================================================================
+
+
 W0 is waiting for Random Time = 3
 Enter the number of times W0 wants to write:
 1
@@ -52,7 +52,7 @@ Enter the value 1 to write
 2
 UPDATED SHARED VARIABLE  = 12
 
-========================================================================
+
 R0 is waiting for random time = 6
 R0 is waiting for random time = 7
 R0 is waiting for random time = 5
@@ -105,8 +105,8 @@ Enter the value 1 to write
 3
 UPDATED SHARED VARIABLE  = 15
 
-========================================================================
-=======================================================================
+
+
 W1 is waiting for Random Time = 2
 Enter the number of times W1 wants to write:
 2
@@ -127,8 +127,8 @@ Enter the value 1 to write
 2
 UPDATED SHARED VARIABLE  = 22
 
-========================================================================
-=======================================================================
+
+
 W3 is waiting for Random Time = 1
 Enter the number of times W3 wants to write:
 2
@@ -139,7 +139,7 @@ Enter the value 2 to write
 3
 UPDATED SHARED VARIABLE  = 27
 
-========================================================================
+
 ======================After Joining the Thread=========
 Final Value Of Shared Variable is:27
 
