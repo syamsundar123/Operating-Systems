@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 
-pthread_mutex_t mutex,wrt;
+pthread_mutex_t mutex,wrt;//Semaphores.
 int shared_variable,read_count = 0;
 
 
