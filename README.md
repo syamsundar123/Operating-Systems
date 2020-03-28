@@ -19,15 +19,18 @@ syam@syam-virtual-machine:~/Desktop$ nano Reader-Writer.c
 syam@syam-virtual-machine:~/Desktop$ 
 syam@syam-virtual-machine:~/Desktop$ gcc Reader-Writer.c -lpthread
 syam@syam-virtual-machine:~/Desktop$ ./a.out
+
+
 Enter the Initial  value of Shared Variable(INTEGER Format):10
 ========================================================================
-Enter the number of readers
+Enter the number of readers:
 5
 R0
 R1
 R2
 R3
 R4
+
 =========================================================================
 Enter the number of  writers:5
 W0
@@ -35,8 +38,10 @@ W1
 W2
 W3
 W4
+
 =========================================================================
 Thread Creating...!
+
 =========================================================================
 =======================================================================
 W0 is waiting for Random Time = 3
@@ -46,6 +51,7 @@ W0 is Writing...
 Enter the value 1 to write
 2
 UPDATED SHARED VARIABLE  = 12
+
 ========================================================================
 R0 is waiting for random time = 6
 R0 is waiting for random time = 7
@@ -108,6 +114,7 @@ Enter the value 1 to write
 Enter the value 2 to write
 3
 UPDATED SHARED VARIABLE  = 20
+
 ========================================================================
 =======================================================================
 W1 is waiting for Random Time = 9
@@ -117,6 +124,7 @@ W3 is Writing...
 Enter the value 1 to write
 2
 UPDATED SHARED VARIABLE  = 22
+
 ========================================================================
 =======================================================================
 W3 is waiting for Random Time = 1
@@ -128,6 +136,7 @@ Enter the value 1 to write
 Enter the value 2 to write
 3
 UPDATED SHARED VARIABLE  = 27
+
 ========================================================================
 ======================After Joining the Thread=========
 Final Value Of Shared Variable is:27
