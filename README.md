@@ -22,7 +22,7 @@ syam@syam-virtual-machine:~/Desktop$ ./a.out
 
 
 Enter the Initial  value of Shared Variable(INTEGER Format):10
-========================================================================
+
 Enter the number of readers:
 5
 R0
