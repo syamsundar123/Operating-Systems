@@ -12,134 +12,99 @@
     Before a reader/writer attempts to access the shared variable it should wait some random amount of time 
         Note: This will help ensure that reads and writes do not occur all at once 
     Use pthreads, mutexes, and condition variables to synchronize access to the shared variable.
+TESTCASES:
 
-#Test Case 1:  Taking Equal number of readers and writers.
-    
-syam@syam-virtual-machine:~/Desktop$ nano Reader-Writer.c
-syam@syam-virtual-machine:~/Desktop$ 
-syam@syam-virtual-machine:~/Desktop$ gcc Reader-Writer.c -lpthread
-syam@syam-virtual-machine:~/Desktop$ ./a.out
+TESTCASE 1:
+When user enters NEGATIVE number of readers.
+In this case
+i. No WRITER and READER thread will be created.
+ii. No read or write operation done.
+iii. Program will be terminated.
 
+TESTCASE 2:
+  When user Enters NEGATIVE number of writers. 
+In this case
+i. No WRITER and READER thread will be created.
+ii. No read or write operation done.
+iii. Program will be terminated.
+TESTCASE 3:
+When user Enters  ZERO WRITERS:
+ 
+In This Case:
+i. Only READER thread will be created
+ii. No WRITER thread is created
+iii. No updating of the Shared Variable
+iv. Only READER is reading the shared variable. From the example given above R1, R0 wait for some times. Then R0 read 1 time and R1 read 2 times. Finally Shared variable value will be remain same.
+TESTCASE 4: 
+When user enters ZERO READERS: 
 
-Enter the Initial  value of Shared Variable(INTEGER Format):10
-
-Enter the number of readers:
-5
-R0
-R1
-R2
-R3
-R4
-
-
-Enter the number of  writers:5
-W0
-W1
-W2
-W3
-W4
-
-
-Thread Creating...!
-
-
-
-W0 is waiting for Random Time = 3
-Enter the number of times W0 wants to write:
-1
-W0 is Writing...
-Enter the value 1 to write
-2
-UPDATED SHARED VARIABLE  = 12
-
-
-R0 is waiting for random time = 6
-R0 is waiting for random time = 7
-R0 is waiting for random time = 5
-R0 is waiting for random time = 3
-R0 is waiting for random time = 5
-Enter the number of times R0 wants to read:
-Enter the number of times R0 wants to read:
-Enter the number of times R0 wants to read:
-Enter the number of times R0 wants to read:
-Enter the number of times R0 wants to read:
-1
-R0 is reading
-R0 is reading shared value = 12
-Number of readers = 4
-5
-R0 is reading
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-Number of readers = 3
-6
-R0 is reading
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-Number of readers = 2
-3
-R0 is reading
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-R0 is reading shared value = 12
-Number of readers = 1
-2
-R1 is reading
-R1 is reading shared value = 12
-R1 is reading shared value = 12
-Number of readers = 0
-
-=======================================================================
-W1 is waiting for Random Time = 6
-Enter the number of times W1 wants to write:
-1
-W1 is Writing...
-Enter the value 1 to write
-3
-UPDATED SHARED VARIABLE  = 15
+In This Case:
+i. Only WRITER thread is created
+ii. No READER thread is created
+iii. No reading of the shared variable
+iv. Only WRITER is updating the shared variable. From the same example given above W1, W0 will make change on the shared variable. W0 writes 2 times and W1 writes 1 time. Finally shared variable value will be changed/updated.
 
 
 
-W1 is waiting for Random Time = 2
-Enter the number of times W1 wants to write:
-2
-W1 is Writing...
-Enter the value 1 to write
-2
-Enter the value 2 to write
-3
-UPDATED SHARED VARIABLE  = 20
+TESTCASE 5: 
+When user Enters equal number of writers and readers.  
 
-========================================================================
-=======================================================================
-W1 is waiting for Random Time = 9
-Enter the number of times W3 wants to write:
-1
-W3 is Writing...
-Enter the value 1 to write
-2
-UPDATED SHARED VARIABLE  = 22
+In This Case:
+i. Both READER and WRITER threads created
+ii. Any WRITER can update the Shared variable any number of times
+iii. Any READER can read that Value any number of times
+iv. In the screen shot, W0 wait for some random times. Then he has the choice to update the variable any number of times with any number. Here W0 update for 1 time. He added 1st time with value 2.Then readers read the value. 
 
 
 
-W3 is waiting for Random Time = 1
-Enter the number of times W3 wants to write:
-2
-W3 is Writing...
-Enter the value 1 to write
-2
-Enter the value 2 to write
-3
-UPDATED SHARED VARIABLE  = 27
 
 
-======================After Joining the Thread============
-Final Value Of Shared Variable is:27 
+
+
+
+
+TESTCASE 6:
+User taken a more number of WRITERS as compared to READERS.
+ 
+In This Case:
+i. Both READER and WRITER threads created
+ii. Any WRITER can update the Shared variable any number of times
+iii. Any READER can read that Value any number of times
+iv. In this snapshot, W0 wait for some time and add some value with shared variable. Then R0 given the choice to read any number of times. Then again, the turn of next writer i.e. W1 came.
+
+
+
+
+
+
+
+
+
+
+TESTCASE 7:
+User taken a more number of READERS as compared to WRITERS.
+ 
+In This Case:
+i. Both READER and WRITER threads created
+ii. Any WRITER can update the Shared variable any number of times
+iii. Any READER can read that Value any number of times
+iv. In this example, W0 wait for some times and update the variable. Then w1 waits for sometime and writes a value. Then any reader read the value any number of times.
+
+
+
+
+
+
+TESTCASE 8:
+Test case with proper example and explanation.
+
+ 
+User takes the shared variable as 20.
+Here, in this example user takes 5 readers and 5 writers.
+So, both  reader and writer threads were created.
+Initially w1 waits for some time and w0 writes one time.W0 writes 20.So the shared variable will be 20+20 = 40.
+After that 5 readers read the shared variable 40.
+
+ 
+After readers read the shared variable, w1 waits for some time and writes the value 20 again,so now the shared variable will be 40+20 = 60.Again w1 waits for some time and writes three times. The values that were written by w1 are 23,23,21 respectively. Now the updated value will be 60+23+23+21=127.W1 writes again and finally value of shared variable is 148.
 
